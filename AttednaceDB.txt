@@ -1,0 +1,122 @@
+-- phpMyAdmin SQL Dump
+-- version 2.10.1
+-- http://www.phpmyadmin.net
+-- 
+-- Host: localhost
+-- Generation Time: May 07, 2020 at 03:50 PM
+-- Server version: 5.0.45
+-- PHP Version: 5.2.5
+-- 
+-- dd
+-- 
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+-- 
+-- Database: `research`
+-- 
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `tb_reg`
+-- 
+
+CREATE TABLE `tb_reg` (
+  `id` int(11) NOT NULL,
+  `ename` varchar(100) NOT NULL,
+  `gender` varchar(100) NOT NULL,
+  `phone` varchar(100) NOT NULL,
+  `address` varchar(100) NOT NULL,
+  `city` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `uname` varchar(100) NOT NULL,
+  `pass` varchar(100) NOT NULL,
+  `img1` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- 
+-- Dumping data for table `tb_reg`
+-- 
+
+INSERT INTO `tb_reg` (`id`, `ename`, `gender`, `phone`, `address`, `city`, `email`, `uname`, `pass`, `img1`) VALUES 
+(1, 'Ramya', 'Female', '7646765', 'fghf', 'Trichy', 'revathygb2014@gmail.com', 'Ramya', '123', '3.jpg'),
+(1, 'revathy', 'Female', '7646765', 'fghf', 'Trichy', 'revathygb2014@gmail.com', 'reva', '123', '3.jpg'),
+(2, 'revathy', 'Female', '9865235689', '12,Anna Nagar\r\nTrichy', 'Trichy', 'revathygb2014@gmail.com', 'revathy', '123', '2.png');
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `tb_review`
+-- 
+
+CREATE TABLE `tb_review` (
+  `id` int(11) NOT NULL,
+  `sname` varchar(100) NOT NULL,
+  `sdate` varchar(100) NOT NULL,
+  `edate` varchar(100) NOT NULL,
+  `dep` varchar(100) NOT NULL,
+  `edesc` varchar(1000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- 
+-- Dumping data for table `tb_review`
+-- 
+
+INSERT INTO `tb_review` (`id`, `sname`, `sdate`, `edate`, `dep`, `edesc`) VALUES 
+(1, 'Ph.D Paper Submission', '14-05-2020', '22-05-2020', 'CSE', 'Ph.D Paper Submission All Student Submission'),
+(2, 'Mphil Paper Submission', '29-04-2020', '22-05-2020', 'CSE', 'MPhil Paper Submission\r\n2019-2020 Batch All Student');
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `tb_staff`
+-- 
+
+CREATE TABLE `tb_staff` (
+  `id` int(11) NOT NULL,
+  `sname` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `phone` varchar(100) NOT NULL,
+  `dep` varchar(100) NOT NULL,
+  `photo` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- 
+-- Dumping data for table `tb_staff`
+-- 
+
+INSERT INTO `tb_staff` (`id`, `sname`, `email`, `phone`, `dep`, `photo`) VALUES 
+(1, 'Miss.Latha', 'latha@gmail.com', '7878451245', 'CSE', '5.png'),
+(2, 'Mr.Ramesh', 'ramesh@gmail.com', '8585235689', 'CSE', '11.jpg'),
+(3, 'Mr.Ravi', 'ravi@gmail.com', '9856235689', 'CSE', '12.jpg'),
+(4, 'Mr.Vinoth', 'vino@gmail.com', '9856235689', 'CSE', '13.jpg');
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `tb_student`
+-- 
+
+CREATE TABLE `tb_student` (
+  `id` varchar(11) NOT NULL,
+  `ename` varchar(100) NOT NULL,
+  `gender` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `phone` varchar(100) NOT NULL,
+  `dep` varchar(100) NOT NULL,
+  `course` varchar(100) NOT NULL,
+  `eyear` varchar(100) NOT NULL,
+  `pass` varchar(100) NOT NULL,
+  `img1` varchar(1000) NOT NULL,
+  `sname` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- 
+-- Dumping data for table `tb_student`
+-- 
+
+INSERT INTO `tb_student` (`id`, `ename`, `gender`, `email`, `phone`, `dep`, `course`, `eyear`, `pass`, `img1`, `sname`) VALUES 
+('2020101', 'Ramya', 'Female', 'ramay@gmail.com', '9636968525', 'CSE', 'M.Phil', '2019-2020', '123456', '4.jpg', 'Mr.Raja'),
+('2020102', 'Prabhu', 'Female', 'prabh@gmail.com', '9600243569', 'CSE', 'M.Phil', '2019-2020', '123456', '13.jpg', 'Mr.Raja'),
+('2020103', 'Revathy', 'Female', 'revathygb2014@gmail.com', '9865235689', 'CSE', 'M.Phil', '2019-2020', '123456', '2.png', 'Miss.Latha');
